@@ -15,3 +15,18 @@ def getCharNum(bookText):
                 charDict[char] = 1
 
     return charDict
+
+def sortDictionaryHelper(dict):
+    return dict["num"]
+
+def sortDictionary(dict):
+
+    dictList =[]
+
+    for key in dict:
+        tempDict = {"letter" : key, "num" : dict[key]}
+        dictList.append(tempDict)
+
+    dictList.sort(reverse = True, key = sortDictionaryHelper)
+
+    return dictList
